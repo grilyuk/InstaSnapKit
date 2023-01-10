@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E724CCC296CE23D0032E2A4 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E724CCB296CE23D0032E2A4 /* LogoView.swift */; };
 		5EF5CD6D296C8C6C004FEE9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF5CD6C296C8C6C004FEE9C /* AppDelegate.swift */; };
 		5EF5CD6F296C8C6C004FEE9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF5CD6E296C8C6C004FEE9C /* SceneDelegate.swift */; };
 		5EF5CD76296C8C6D004FEE9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EF5CD75296C8C6D004FEE9C /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E724CCB296CE23D0032E2A4 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		5EF5CD69296C8C6C004FEE9C /* InstagramNoSB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramNoSB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF5CD6C296C8C6C004FEE9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EF5CD6E296C8C6C004FEE9C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E724CCA296CE22E0032E2A4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5E724CCB296CE23D0032E2A4 /* LogoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		5EF5CD60296C8C6C004FEE9C = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +68,7 @@
 			children = (
 				5EF5CD80296CD3DF004FEE9C /* Application */,
 				5EF5CD82296CD4A1004FEE9C /* Feed */,
+				5E724CCA296CE22E0032E2A4 /* Views */,
 				5EF5CD81296CD40F004FEE9C /* Resources */,
 			);
 			path = InstagramNoSB;
@@ -167,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EF5CD6D296C8C6C004FEE9C /* AppDelegate.swift in Sources */,
+				5E724CCC296CE23D0032E2A4 /* LogoView.swift in Sources */,
 				5EF5CD6F296C8C6C004FEE9C /* SceneDelegate.swift in Sources */,
 				5EF5CD84296CD4C7004FEE9C /* FeedViewController.swift in Sources */,
 			);
