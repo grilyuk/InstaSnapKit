@@ -14,6 +14,7 @@ class FeedPostCell: UITableViewCell {
         userImageView.image = info.userImage
         usernameLabel.text = info.username
         subtitleLabel.text = info.postSubtitle
+        postImageView.image = info.postImage
     }
     
     //MARK: - Init
@@ -32,7 +33,9 @@ class FeedPostCell: UITableViewCell {
         static let contentInset: CGFloat = 12
         static let userImageTopInset: CGFloat = 6
         static let usernameLabelFontSize: CGFloat = 14
+        static let subtitleLabelFontSize: CGFloat = 10
         static let usernameStackToProfileImage: CGFloat = 12
+        static let postImageToUserImageOffset: CGFloat = 6
     }
     
     //MARK: - Private properties
@@ -51,14 +54,42 @@ class FeedPostCell: UITableViewCell {
     
     private let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: UIConstants.usernameLabelFontSize, weight: .bold)
+        label.font = .systemFont(ofSize: UIConstants.subtitleLabelFontSize)
         return label
     }()
+    
+    private let optionsButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "ellipsis"), for: .normal)
+        button.tintColor = .black
+        return button
+    }()
+    
+    private let postImageView: UIImageView = {
+        let view = UIImageView()
+        return view
+    }()
+    
+    private let likeButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = .black
+        button.setImage(UIImage(systemName: "heart"), for: .normal)
+        return button
+    }()
+    
+    private let commentButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = .black
+        button.setImage(UIImage(systemName: "bubble.right"), for: .normal)
+        return button
+    }()
+
 }
 
 //MARK: - Private methods
 private extension FeedPostCell {
     func initialize() {
+        selectionStyle = .none
         contentView.addSubview(userImageView)
         userImageView.snp.makeConstraints{ make in
             make.leading.equalToSuperview().inset(UIConstants.contentInset)
@@ -73,6 +104,16 @@ private extension FeedPostCell {
         usernameStack.snp.makeConstraints{ make in
             make.centerY.equalTo(userImageView)
             make.leading.equalTo(userImageView.snp.trailing).offset(UIConstants.usernameStackToProfileImage)
+        }
+        contentView.addSubview(optionsButton)
+        optionsButton.snp.makeConstraints{make in
+            make.top.trailing.equalToSuperview().inset(UIConstants.contentInset)
+        }
+        contentView.addSubview(postImageView)
+        postImageView.snp.makeConstraints{make in
+            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(userImageView.snp.bottom).offset(UIConstants.postImageToUserImageOffset)
+            make.height.equalTo(contentView.snp.width)
         }
     }
 }
